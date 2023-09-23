@@ -6,22 +6,6 @@ import (
 	"math/rand"
 )
 
-type Neuron struct {
-	Weights []float64
-	Bias    float64
-}
-
-type NeuralNetwork struct {
-	NumLayers      uint
-	NeuronsInLayer []uint
-	MinAccuracy    float64
-	MaxEpochs      uint
-	LearningRate   float64
-	Neurons        [][]Neuron
-	Epochs         uint
-	Accuracy       float64
-}
-
 func sigmoid(x float64) float64 {
 	return 1.0 / (1.0 + math.Exp(-x))
 }
@@ -38,7 +22,7 @@ func (nn *NeuralNetwork) Initialize() {
 	}
 
 	if nn.MinAccuracy == 0 {
-		nn.MinAccuracy = 1.0 // default value for MinAccuracy
+		nn.MinAccuracy = 0.7 // default value for MinAccuracy
 	}
 
 	if nn.MaxEpochs == 0 {
