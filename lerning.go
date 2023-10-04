@@ -64,7 +64,7 @@ func learningPrepare(conf NetworkConfig, isTraining bool) {
 	NeuronsInLayer := make([]uint, conf.NumHiddenLayers+2)
 	NeuronsInLayer[0] = uint(len(conf.TrainingData[0].Inputs))
 	NeuronsInLayer[conf.NumHiddenLayers+1] = uint(len(conf.TrainingData[0].Targets))
-	for i := 1; i <= conf.NumHiddenLayers; i++ {
+	for i := 1; int64(i) <= conf.NumHiddenLayers; i++ {
 		NeuronsInLayer[i] = uint(conf.NumNeurons)
 	}
 

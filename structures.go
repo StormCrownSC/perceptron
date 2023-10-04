@@ -19,8 +19,8 @@ type Neuron struct {
 // -----------------------------------------------------------------------------------------------------------------------------------
 
 type NetworkConfig struct {
-	NumHiddenLayers int     `bson:"numHiddenLayers" json:"numHiddenLayers"`
-	NumNeurons      int     `bson:"numNeurons" json:"numNeurons"`
+	NumHiddenLayers int64   `bson:"numHiddenLayers" json:"numHiddenLayers"`
+	NumNeurons      int64   `bson:"numNeurons" json:"numNeurons"`
 	LearningRate    float64 `bson:"learningRate" json:"learningRate"`
 
 	SaveDir       string         `bson:"saveDir" json:"saveDir"`
